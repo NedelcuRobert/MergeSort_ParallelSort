@@ -1,0 +1,15 @@
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\bin\Debug\net6.0\MergeSort_Secvential.exe
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\bin\Debug\net6.0\MergeSort_Secvential.deps.json
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\bin\Debug\net6.0\MergeSort_Secvential.runtimeconfig.json
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\bin\Debug\net6.0\MergeSort_Secvential.dll
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\bin\Debug\net6.0\MergeSort_Secvential.pdb
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.csproj.AssemblyReference.cache
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.GeneratedMSBuildEditorConfig.editorconfig
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.AssemblyInfoInputs.cache
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.AssemblyInfo.cs
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.csproj.CoreCompileInputs.cache
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.dll
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\refint\MergeSort_Secvential.dll
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.pdb
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\MergeSort_Secvential.genruntimeconfig.cache
+D:\FACULTATE\PROIECTE\APD\MergeSort_SortParallel\MergeSort_Secvential\MergeSort_Secvential\obj\Debug\net6.0\ref\MergeSort_Secvential.dll
