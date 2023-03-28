@@ -1,26 +1,70 @@
-﻿
+﻿using System;
+using System.Diagnostics;
 
 class MergeSort
 {
+    static string directoryPath_Inputs = @"../../../ExperimentalData/Inputs";
+    static string directoryPath_Outputs = @"../../../ExperimentalData/Outputs";
     static void Main(string[] args)
     {
-        int size = 10000; // Dimensiunea vectorului
-        int[] arr = new int[size];
+        string[] inputFiles = { "input_100.txt", "input_1000.txt", "input_10000.txt", "input_100000.txt", "input_1000000.txt" };
+        string[] outputFiles = { "output_100.txt", "output_1000.txt", "output_10000.txt", "output_100000.txt", "output_1000000.txt" };
 
-        Random rand = new Random();
+        SortFiles(inputFiles, outputFiles);
+    }
 
-        for (int i = 0; i < size; i++)
+    static void SortFiles(string[] inputFiles, string[] outputFiles)
+    {
+        Console.WriteLine("Logs:");
+        Console.WriteLine("File\tData Set\tDuration (ms)");
+
+        int[][] arrs = new int[inputFiles.Length][];
+        long[] durations = new long[inputFiles.Length];
+
+        for (int i = 0; i < inputFiles.Length; i++)
         {
-            arr[i] = rand.Next(10000); // Numere întregi aleatorii în intervalul [0, 999999]
+            string inputFile = Path.Combine(directoryPath_Inputs, inputFiles[i]);
+            string outputFile = Path.Combine(directoryPath_Outputs, outputFiles[i]);
+
+            if (!File.Exists(inputFile) || !File.Exists(outputFile))
+            {
+                // Fisierele nu exista, deci le generam
+                DataGenerator dataGenerator = new DataGenerator();
+                dataGenerator.Generate();
+            }
+
+            // Citim datele din fisierul de intrare
+            arrs[i] = File.ReadAllLines(inputFile).Select(int.Parse).ToArray();
+
+            // Sortam datele si masuram timpul de sortare
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            SequentialMergeSort(arrs[i], 0, arrs[i].Length - 1);
+            stopwatch.Stop();
+            durations[i] = stopwatch.ElapsedMilliseconds;
+
+            // Scriem datele sortate in fisierul de iesire
+            File.WriteAllLines(outputFile, arrs[i].Select(n => n.ToString()).ToArray());
+
+            Console.WriteLine($"{i + 1}\t{inputFiles[i].Replace("input_", "").Replace(".txt", "")}\t{durations[i]}");
         }
 
-        Console.WriteLine("Vectorul generat aleatoriu: ");
-        PrintArray(arr);
+        Console.WriteLine("\nComparison Table:");
+        Console.WriteLine("DataSet\tAscending (ms)\tDescending (ms)\tRandom (ms)");
 
-        SequentialMergeSort(arr, 0, arr.Length - 1);
+        int[] dataSets = { 100, 1000, 10000, 100000, 1000000 };
 
-        Console.WriteLine("Vectorul sortat: ");
-        PrintArray(arr);
+        for (int i = 0; i < dataSets.Length; i++)
+        {
+            Console.Write($"{dataSets[i]}\t");
+
+            for (int j = 0; j < 4; j++)
+            {
+                int index = Array.IndexOf(inputFiles, $"input_{dataSets[i]}.txt");
+                Console.Write($"{durations[index]}\t");
+            }
+
+            Console.WriteLine();
+        }
     }
 
     static void SequentialMergeSort(int[] arr, int left, int right)
@@ -69,14 +113,5 @@ class MergeSort
         {
             arr[i] = temp[i];
         }
-    }
-
-    static void PrintArray(int[] arr)
-    {
-        for (int i = 0; i < arr.Length; i++)
-        {
-            Console.Write("{0} ", arr[i]);
-        }
-        Console.WriteLine();
     }
 }
